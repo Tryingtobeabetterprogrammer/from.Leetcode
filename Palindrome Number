@@ -1,0 +1,13 @@
+class Solution(object):
+    		def isPalindrome(self, x):
+    
+        		x=str(x)
+        		l=[]
+       			for i in x:
+            			l.append(i)
+        		l.reverse()
+        # l=[1,2,1]
+        		m=''.join(l)
+        # l=[121]
+        		if m==x:
+            		return True 
