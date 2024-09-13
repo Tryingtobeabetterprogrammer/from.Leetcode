@@ -1,0 +1,19 @@
+
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        x=[]# giving a empty str for append later on
+        a={'(':')','[':']','{':'}'}# what we wanted
+        for char in s:# pass the s-->char
+            if char in a:# if the char in a
+                x.append(char)#append in x
+            else:
+                if s and a[x[-1]]==char:#or checking process continous if the char is their 
+                    x.pop()#dels the unclosed 
+                else:
+                    return False#and returns false
+                
+        return len(x)==0# these process is complete to say that its completly true or false
