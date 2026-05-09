@@ -1,0 +1,15 @@
+class Solution(object):
+    def flipAndInvertImage(self, image):
+        """
+        :type image: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        for row in image:
+            # Step 1: reverse the row
+            row.reverse()
+            # Step 2: invert each element
+            for i in range(len(row)):
+                row[i] ^= 1   # XOR with 1 flips 0→1 and 1→0
+        return image
+
+        
