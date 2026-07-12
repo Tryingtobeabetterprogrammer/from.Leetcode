@@ -1,0 +1,26 @@
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        r=""
+        c=0
+        num1,num2=num1[::-1],num2[::-1]
+        for i in range(max(len(num1),len(num2))):
+            d_a = 0
+            d_b = 0
+            if i < len(num1):
+                d_a = int(num1[i])
+            
+            if i < len(num2):
+                d_b = int(num2[i])
+            
+            t = (d_a + d_b + c)
+            
+            digit = t % 10 
+            c = t // 10 #to update the carry
+            r = str(digit) + r #store the digit as string and add it with string r
+        if c:
+            r = "1" + r
+        return r
+
+        
+            
+
