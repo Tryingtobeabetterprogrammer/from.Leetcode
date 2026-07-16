@@ -1,0 +1,7 @@
+class Solution:
+    def largestEven(self, s: str) -> str:
+        k=s.rfind('2')
+        if '2' in s:
+            return s[:k+1]
+        else:
+            return ''
