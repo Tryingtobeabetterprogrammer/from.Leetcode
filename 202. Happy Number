@@ -1,0 +1,18 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+            hashset=set()
+            while True:
+                sum=0
+                while n>0:
+                    d=n%10
+                    sum+=d**2
+                    n//=10
+                
+                if sum==1:
+                    return True
+                
+                if sum in hashset:
+                    return False
+              
+                hashset.add(sum)
+                n=sum
