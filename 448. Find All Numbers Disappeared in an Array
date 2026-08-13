@@ -1,0 +1,15 @@
+class Solution:
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        b = []
+        c = []
+
+        for i in range(len(nums)):
+            b.append(i + 1)
+
+        s = set(nums)
+
+        for i in b:
+            if i not in s:
+                c.append(i)
+
+        return c
