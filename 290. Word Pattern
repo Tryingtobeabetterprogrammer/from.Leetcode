@@ -1,0 +1,17 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        words=s.split(" ")
+        if len(pattern)!=len(words):
+            return False
+        else:
+            chtoword={}
+            wordtoch={}
+
+            for c,w in zip(pattern,words):
+                if c in chtoword and chtoword[c]!=w:
+                    return False
+                if w in wordtoch and wordtoch[w]!=c:
+                    return False
+                chtoword[c]=w
+                wordtoch[w]=c
+            return True
