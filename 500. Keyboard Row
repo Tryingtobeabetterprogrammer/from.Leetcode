@@ -1,0 +1,25 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        row1="qwertyuiop"
+        row2="Aasdfghjkl"
+        row3="zxcvbnm"
+        
+
+        ans=[]
+
+        for word in words:
+            
+            row=set()
+            for letter in word:
+                
+                if letter in row1:
+                    row.add(1)
+                if letter in row2:
+                    row.add(2)
+                if letter in row3:
+                    row.add(3)
+            if len(row)==1:
+                ans.append(word)
+
+        return ans
+                        
